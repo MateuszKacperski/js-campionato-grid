@@ -10,6 +10,16 @@ const grid = document.getElementById('grid');
 
 //funzioni
 
+function createCell () {
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.innerText = cell;
+    return cell;
+}
+
+
+const addNumber = number => number + 1
+
 
 
 
@@ -28,13 +38,21 @@ button.addEventListener('click', function(){
     for(let i = 0; i < totalCells; i++){
 
         // creo cella nel html 
-        const cell = document.createElement('div');
+        const cell = createCell();
         cell.className = 'cell';
+
+        const numero = addNumber(i);
+        console.log(numero);
+
+
         grid.appendChild(cell);
     }
 
+  
+   
+ 
 
-    
+
 
 
 })
