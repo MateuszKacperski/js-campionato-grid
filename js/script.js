@@ -29,30 +29,37 @@ const rows = 10;
 const cols = 10;
 const totalCells = rows * cols;
 
+// Variabile di conteggio usata per impedire di azionare il bottone piu volte
+let count = 0;
 
 // aggiungo azione dopo aver cliccato sul bottone
 
-button.addEventListener('click', function(){
+button.addEventListener('click', function(e){
 
-    // creo celle
+    e.preventDefault();
+    count++
+    if(count === 1){
+
+        // creo celle
     for(let i = 0; i < totalCells; i++){
 
         // creo cella nel html 
         const cell = createCell();
         cell.className = 'cell';
 
+        //Inserisco il numero all'interno della cella
         const numero = addNumber(i);
-        console.log(numero);
+        cell.innerText = numero;
+
+        cell.addEventListener('click', function(){
+            cell.classList.toggle('clicked');
+            console.log(numero);
+        })
 
 
         grid.appendChild(cell);
     }
-
-  
-   
- 
-
-
+    }
 
 
 })

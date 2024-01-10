@@ -14,6 +14,10 @@
     margin: 0 auto;
 }
 
+body {
+    background-color: aquamarine;
+}
+
 header {
     height: 100px;
     padding: 0 20px;
@@ -34,19 +38,27 @@ header {
 
 #grid {
     min-width: 600px;
-    min-height: 600px;
+    min-height: 80vh;
+    margin: auto 150px;
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start;
-    background-color: aquamarine;
+    align-content: center;
 }
 
 
 #grid .cell{
-    padding: 10px 20px;
+    cursor: pointer;
+    padding: 10px;
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: solid 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell.clicked {
+    background-color: blue;
 }
 
 footer {
